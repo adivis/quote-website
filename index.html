@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="img/undraw_tree_swing_re_pqee.svg" alt="" width="50%">
+        <p id="quote"></p>
+    </div>
+    <script>
+        const quote = document.getElementById("quote");
+        let realData="", rand;
+        const getNewQuote=()=>{
+            let min=0,max=realData.length-1;
+            let difference = max - min;
+            rand = Math.random();
+            rand = Math.floor( rand * difference);
+            rand = rand + min;
+            console.log(rand);
+            quote.innerHTML = `${realData[rand].text}`;
+    }
+        const getQuotes = async()=>{
+            const api = "https://type.fit/api/quotes";
+            try{
+                let data = await fetch(api);
+                 realData = await data.json();
+                 getNewQuote();
+                // console.log(realData[0].text);
+            }catch(error){}
+        };
+            getQuotes();
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    background-image: url("img/bg.jpg"); /* The image used */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    /* height: 500px; You must set a specified height */
+    background-attachment: fixed;
+
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container{
+   background-color: white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+    height: 80vh;
+    width: 80%;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-align: center;
+  }
+  p{
+      font-size: 20px;
+  }
